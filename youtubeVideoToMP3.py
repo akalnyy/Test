@@ -29,16 +29,16 @@ def MP4ToMP3(mp4, mp3):
     fileToConvert.write_audiofile(mp3)
     fileToConvert.close()
 
-VIDEO_FILE_PATH = file_path
-AUDIO_FILE_PATH = VIDEO_FILE_PATH.replace("mp4", "mp3")
+video_file_path = file_path
+audio_file_path = video_file_path.replace("mp4", "mp3")
 
-print(VIDEO_FILE_PATH)
-print(AUDIO_FILE_PATH)
+print(video_file_path)
+print(audio_file_path)
 
-MP4ToMP3(VIDEO_FILE_PATH, AUDIO_FILE_PATH)
+MP4ToMP3(video_file_path, audio_file_path)
 
-if os.path.exists(AUDIO_FILE_PATH):
-  os.remove(VIDEO_FILE_PATH)
+if os.path.exists(audio_file_path):
+  os.remove(video_file_path)
   print("Video file deleted successfully")
 else:
   print("The audio file does not exist")
