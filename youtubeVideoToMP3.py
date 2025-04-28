@@ -1,4 +1,5 @@
-from pytube import YouTube
+#from pytube import YouTube
+from pytubefix import YouTube
 from sys import argv
 
 import os
@@ -18,24 +19,24 @@ ytd = yt.streams.get_audio_only()
 
 ytd.download(downloadsFolder)
 
-# Convert from mp4 to mp3
+# Convert from m4a to mp3
 
 for file in os.listdir(downloadsFolder):
-    if file.endswith(".mp4"):
+    if file.endswith(".m4a"):
         file_path = os.path.join(downloadsFolder, file)
 
-def MP4ToMP3(mp4, mp3):
-    fileToConvert = AudioFileClip(mp4)
+def M4AToMP3(m4a, mp3):
+    fileToConvert = AudioFileClip(m4a)
     fileToConvert.write_audiofile(mp3)
     fileToConvert.close()
 
 video_file_path = file_path
-audio_file_path = video_file_path.replace("mp4", "mp3")
+audio_file_path = video_file_path.replace("m4a", "mp3")
 
 print(video_file_path)
 print(audio_file_path)
 
-MP4ToMP3(video_file_path, audio_file_path)
+M4AToMP3(video_file_path, audio_file_path)
 
 if os.path.exists(audio_file_path):
   os.remove(video_file_path)
