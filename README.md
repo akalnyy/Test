@@ -1,1 +1,3 @@
-This project is created for test purposes
+youtubeVideo to mp3 converter - how to run example: 
+
+{path_to_file}/ytVideoDownload.bat "https://www.youtube.com/watch?v=5osdgQosSLQ"
